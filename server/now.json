@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.ts",
+      "use": "@now/node-server"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "index.ts"
+    }
+  ],
+  "alias": [
+    "hn-comments-api"
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "PORT": "8181",
+    "CORS_ORIGIN": "https://hn-comments.vercel.app",
+    "JWT_SECRET": "jwt_secret",
+    "PASSWORD_SALT": 10
+  }
+}
