@@ -18,8 +18,8 @@
   "env": {
     "NODE_ENV": "production",
     "PORT": "8181",
-    "CORS_ORIGIN": "https://hn-comments.vercel.app",
+    "CORS_ORIGIN": "https://hacker-news-comments.vercel.app",
     "JWT_SECRET": "jwt_secret",
-    "PASSWORD_SALT": 10
+    "PASSWORD_SALT": "10"
   }
 }

@@ -5,7 +5,9 @@ const stroage = window.localStorage.vuex;
 const state = stroage ? JSON.parse(stroage) : null;
 const token = state?.user?.currentUser?.token;
 
-const BASE_URL: URL = new URL('http://localhost:8184/api/');
+const BASE_URL: URL = new URL(
+  'https://hacker-news-comments-api.vercel.app/api/'
+);
 const apiClient = ky.create({
   prefixUrl: BASE_URL,
   headers: {authorization: token},
