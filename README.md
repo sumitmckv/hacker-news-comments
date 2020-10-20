@@ -3,11 +3,14 @@ It contains two module, **web and server.**
 
 ## Web
 It contains the client side code written in Vue.js and in Typescript.
+
 Instructions about project setup and deployment can be found [here](web/README.md).
 
 ## Server
 It contains the server side code written in Express and in Typescript.
+
 It uses mongodb for storing comments.
+
 Instructions about project setup and deployment can be found [here](server/README.md).
 
 ## Technology Used
