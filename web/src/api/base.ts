@@ -1,20 +1,22 @@
 import ky from 'ky';
 import store from '../store';
 
-const stroage = window.localStorage.vuex;
-const state = stroage ? JSON.parse(stroage) : null;
-const token = state?.user?.currentUser?.token;
-
 const BASE_URL: URL = new URL(
   'https://hacker-news-comments-api.vercel.app/api/'
 );
 const apiClient = ky.create({
   prefixUrl: BASE_URL,
-  headers: {authorization: token},
+  headers: {},
   hooks: {
     beforeRequest: [
-      () => {
+      request => {
         store.commit('loader/startLoading');
+        const stroage = window.localStorage.vuex;
+        const state = stroage ? JSON.parse(stroage) : null;
+        const token = state?.user?.currentUser?.token;
+        if (token) {
+          request.headers.set('authorization', token);
+        }
       },
     ],
     afterResponse: [
