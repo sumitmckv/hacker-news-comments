@@ -4,7 +4,7 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store';
 import VueTailwind from 'vue-tailwind';
-import {theme} from '@/theme';
+import theme from '@/theme';
 
 Vue.config.productionTip = false;
 Vue.use(VueTailwind, theme);

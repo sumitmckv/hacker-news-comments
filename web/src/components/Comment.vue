@@ -81,6 +81,7 @@ const user = namespace('user');
 const comment = namespace('comment');
 
 @Component({
+  name: 'comment',
   components: {CommentModal, Info},
 })
 export default class Comment extends Vue {
